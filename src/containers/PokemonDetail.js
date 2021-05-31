@@ -63,7 +63,6 @@ const PokemonDetail = () => {
     let inventory = getLocalStore();
     let catched;
 
-    // Check if catched pokemon name is empty
     if (pokename !== "") {
       catched = {
         ...value,
@@ -75,9 +74,7 @@ const PokemonDetail = () => {
       return;
     }
 
-    // Check if there is pokemon in inventory
     if (inventory.length > 0) {
-      // Check for the duplicate name
       let isDuplicate = false;
       // eslint-disable-next-line
       inventory.map((inv) => {
@@ -120,7 +117,6 @@ const PokemonDetail = () => {
               <Title primary>{pokemon.name}</Title>
               <div title='types'>
                 <Detail>
-                  {/* <p className='title'>Types</p> */}
                   {pokemon.types &&
                     pokemon.types.map((types) => {
                       const { type } = types;
@@ -141,7 +137,7 @@ const PokemonDetail = () => {
                     :
                     <img
                       className='pokemon-image'
-                      src={pokemon.sprites.back_default}
+                      src={pokemon.sprites.back_default ? pokemon.sprites.back_default : pokeball}
                       alt='pokemon'
                     />
                   }

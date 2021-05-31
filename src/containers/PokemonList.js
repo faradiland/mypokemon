@@ -8,6 +8,7 @@ import Card from "../components/Card";
 import Loader from "../components/Loader";
 import PageTitle from "../components/PageTitle";
 import StyledPokemonList from "./StyledPokemonList";
+import pokeball from "../assets/pokeball.png";
 
 const PokemonList = () => {
   const history = useHistory();
@@ -57,7 +58,7 @@ const PokemonList = () => {
                 key={pokemon.name}
                 name={pokemon.name}
                 url={pokemon.url}
-                image={pokemon.image}
+                image={pokemon.image ? pokemon.image : pokeball}
                 goToDetail={goToDetail}
                 getOwned={getOwned}
               />

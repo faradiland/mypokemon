@@ -7,7 +7,6 @@ const StyledCard = styled.div`
   border-radius: 20px;
   padding: 0 20px;
   margin: 10px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,20 +53,42 @@ const StyledCard = styled.div`
         height: 120px;
       }
   }
+  .card-btn {
+    border: 2px solid #198a21;
+    background: #fff;
+    color: #198a21;
+    border-radius: 50px;
+    padding: 4px 20px;
+    margin: 10px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background: #14a01d;
+    }
+  }
+  .card-owned {
+    text-transform: capitalize;
+  }
+  &.pointer {
+    cursor: pointer;
+  }
 `;
 
-const Card = ({ id, name, image, goToDetail, getOwned, onClickRelease }) => {
+const Card = ({ id, name, image, spec, goToDetail, getOwned, onClickRelease }) => {
   return (
     <>
-      <StyledCard onClick={() => id === "pokemon-list" && goToDetail(name)}>
+      <StyledCard onClick={() => id === "pokemon-list" && goToDetail(name)} className={id === "pokemon-list" && "pointer"}>
         {id === "pokemon-list" ? (
           <div>
             <p className='card-name'>{name}</p>
-            <p className='card-owned'>Owned: {getOwned(name)}</p>
+            <p className='card-owned'>owned {getOwned(name)}</p>
           </div>
         ) : (
           <div>
             <p className='card-name'>{name}</p>
+            <p className='card-owned'>{spec}</p>
             <button className='card-btn' onClick={() => onClickRelease(name)}>
               Remove
             </button>

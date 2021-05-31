@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 import Result from "../components/Result";
 import PageTitle from "../components/PageTitle";
+import Modal from "../components/Modal";
 import StyledPokemonList from "./StyledPokemonList";
 
 const MyPokemon = () => {
@@ -31,18 +32,7 @@ const MyPokemon = () => {
 
   return (
     <>
-      {screen === "confirmation" ? (
-        <Result>
-          <p>{`Are you sure you want to release ${nickname} ?`}</p>
-          <br />
-          <Button confirmation onClick={() => handleRelease(nickname)}>
-            Yes
-          </Button>
-          <Button confirmation onClick={() => setScreen("default")}>
-            No
-          </Button>
-        </Result>
-      ) : pokemons.length !== 0 ? (
+      {pokemons.length !== 0 ? (
         <StyledPokemonList>
           <PageTitle title='My Pokemon' />
           <div className='grid'>
@@ -51,11 +41,25 @@ const MyPokemon = () => {
                 id='my-pokemon'
                 key={pokemon.nickname}
                 name={pokemon.nickname}
+                spec={pokemon.species.name}
                 image={pokemon.sprites.front_default}
                 onClickRelease={onClickRelease}
               />
             ))}
           </div>
+          { screen === "confirmation" &&
+            <Modal visible={true} title="Are you sure?" onClose={() => setScreen("detail")}>
+              <Result>
+                <p>Do you want ro remove <b style={{ textTransform: 'capitalize' }}>{nickname}</b></p>
+                <p>from your Pokemon list?</p>
+                <br />
+                <div className="btn-wrapper">
+                  <Button confirmation onClick={() => handleRelease(nickname)} className="yes-btn">Yes</Button>
+                  <Button confirmation onClick={() => setScreen("default")} className="no-btn">No</Button>
+                </div>
+              </Result>
+            </Modal>
+          }
         </StyledPokemonList>
       ) : (
         <Result>

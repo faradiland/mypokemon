@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import colors from "./colors"
 
 const StyledFooter = styled.div`
   text-align: center;
