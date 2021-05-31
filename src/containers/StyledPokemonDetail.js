@@ -62,8 +62,7 @@ const StyledPokemonDetail = styled.div`
   }
   .info {
     background: #fefefe;
-    position: relative;
-    top: 30px;
+    margin-top: 30px;
     padding: 30px 20px;
     overflow: hidden;
     border-radius: 30px 30px 0 0;
@@ -75,6 +74,7 @@ const StyledPokemonDetail = styled.div`
     &-desc {
       font-weight: bold;
       line-height: 1.7em;
+      text-transform: capitalize;
     }
   }
   .flex {
