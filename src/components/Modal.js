@@ -37,8 +37,6 @@ const StyledModal = styled.div`
     font-size: 1.3em;
     margin-bottom: 30px;
   }
-  @-moz-keyframes opac { 0% { opacity: 0 } 100% { opacity: 1 } }
-  @-webkit-keyframes opac { 0% { opacity: 0 } 100% { opacity: 1 } }
   @keyframes opac { 0% { opacity: 0 } 100% { opacity: 1 } }
 `;
 

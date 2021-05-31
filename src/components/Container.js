@@ -1,15 +1,14 @@
 import styled from "@emotion/styled";
 
 const Container = styled.div`
-// padding: 50px;
-  // @media screen and (min-width: 620px) {
-  //   max-width: 600px;
-  //   margin: auto;
-  // }
-  // @media screen and (min-width: 960px) {
-  //   max-width: 800px;
-  //   margin: auto;
-  // }
+  min-height: 100vh;
+  padding: 0 100px;
+  @media(max-width: 1024px) {
+    padding: 0 50px;
+  }
+  @media(max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
 
 export default Container;

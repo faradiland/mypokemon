@@ -9,7 +9,7 @@ import PokemonList from "./containers/PokemonList";
 import NotFound from "./containers/404";
 import Navbar from "./components/Navbar";
 import Container from "./components/Container";
-import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,11 +19,12 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path='/' component={PokemonList} />
-            <Route rxact path='/pokemon/:name' component={PokemonDetail} />
+            <Route exact path='/pokemon/:name' component={PokemonDetail} />
             <Route exact path='/inventory' component={MyPokemon} />
-            <Route component={NotFound} />
+            <Route exact path='*' component={NotFound} />
           </Switch>
         </Container>
+        <Footer />
       </Router>
     </ApolloProvider>
   );

@@ -5,7 +5,7 @@ import arrow from "../assets/left.svg";
 import colors from "./colors";
 
 const StyledNavbar = styled.div`
-  padding: 20px;
+  padding: 20px 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -15,6 +15,7 @@ const StyledNavbar = styled.div`
     display: flex;
     align-items: center;
     height: 100px;
+    transition: all 0.25s ease;
     @media(max-width:768px) {
       height: 90px;
     }

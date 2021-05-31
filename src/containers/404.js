@@ -3,7 +3,8 @@ import Result from "../components/Result";
 const NotFound = () => {
   return (
     <Result>
-      <p>Page not found.</p>
+      <h1>Oops</h1>
+      <p>Are you lost?</p>
     </Result>
   );
 };

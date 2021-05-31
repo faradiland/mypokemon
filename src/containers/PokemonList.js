@@ -65,7 +65,7 @@ const PokemonList = () => {
           </div>
           {!loading && (
             <div className='loader'>
-              <Button onClick={() => setLimit(limit + 10)}>Load More</Button>
+              <Button onClick={() => setLimit(limit + 10)} className="btn-load">Click to load more</Button>
             </div>
           )}
         </StyledPokemonList>

@@ -1,34 +1,10 @@
 import { useEffect, useState } from "react";
-import styled from "@emotion/styled";
 
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Result from "../components/Result";
 import PageTitle from "../components/PageTitle";
-
-const StyledPokemonList = styled.div`
-  // padding: 30px 20px;
-  // min-height: 100vh;
-  // .grid {
-  //   display: grid;
-  //   grid-template-columns: repeat(8, 1fr);
-  //   margin: 0 0 40px;
-  //   gap: 10px;
-  // }
-  // .loader {
-  //   text-align: center;
-  // }
-  // @media screen and (min-width: 620px) {
-  //   .grid {
-  //     grid-template-columns: repeat(9, 1fr);
-  //   }
-  // }
-  // @media screen and (min-width: 960px) {
-  //   .grid {
-  //     grid-template-columns: repeat(12, 1fr);
-  //   }
-  // }
-`;
+import StyledPokemonList from "./StyledPokemonList";
 
 const MyPokemon = () => {
   const [pokemons, setPokemons] = useState([]);
