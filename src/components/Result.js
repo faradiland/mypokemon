@@ -28,6 +28,13 @@ const Result = styled.div`
       color: #fff;
     }
   }
+  &.centered{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `
 
 export default Result;

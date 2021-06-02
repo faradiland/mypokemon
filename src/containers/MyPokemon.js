@@ -62,8 +62,10 @@ const MyPokemon = () => {
           }
         </StyledPokemonList>
       ) : (
-        <Result>
-          <p>{`You have no pokemon.`}</p>
+        <Result className="centered">
+          <p>Seems like you haven't caught any Pokemon yet</p>
+          <br/>
+          <h3>Pick and catch Pokemon first</h3>
         </Result>
       )}
     </>
