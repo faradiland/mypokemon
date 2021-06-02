@@ -110,15 +110,13 @@ const Card = ({ id, name, image, spec, goToDetail, getOwned, onClickRelease }) =
           <div>
             <p className='card-name'>{name}</p>
             <p className='card-owned'>{spec}</p>
-            <button className='card-btn desktop' onClick={() => onClickRelease(name)}>
-              Remove
-            </button>
+            <button className='card-btn desktop' onClick={() => onClickRelease(name)}>Remove</button>
           </div>
         )}
         <img src={image} className='card-image' alt={`${name}`} />
-        <button className='card-btn mobile' onClick={() => onClickRelease(name)}>
-          Remove
-        </button>
+        {id !== "pokemon-list" &&
+          <button className='card-btn mobile' onClick={() => onClickRelease(name)}>Remove</button>
+        }
       </StyledCard>
     </>
   );
