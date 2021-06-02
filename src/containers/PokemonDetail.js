@@ -232,8 +232,10 @@ const PokemonDetail = () => {
                     <p>You just catched <b style={{ textTransform: 'capitalize' }}>{pokemon.name}</b>!</p>
                     <p>Now give a nickname and save it as your Pokemon</p>
                     <br />
-                    <Input handleChange={setPokename} placeholder="Nickname" />
-                    <Button onClick={() => savePokemon(pokemon)} className='save-btn'>Save</Button>
+                    <form onSubmit={() => savePokemon(pokemon)}>
+                      <Input handleChange={setPokename} placeholder="Nickname" />
+                      <button type="submit" onClick={() => savePokemon(pokemon)} className='save-btn'>Save</button>
+                    </form>
                   </Result>
                 </Modal>
               }

@@ -139,6 +139,10 @@ const StyledPokemonDetail = styled.div`
       background: #14a01d;
     }
   }
+  button.save-btn {
+    display: block;
+    width: 100%;
+  }
   @-moz-keyframes zoom { 50% { -moz-transform: scale(1.2); } 100% { -moz-transform: rotate(360deg) scale(1); } }
   @-webkit-keyframes zoom { 50% { -webkit-transform: scale(1.2); } 100% { -webkit-transform: rotate(360deg) scale(1); } }
   @keyframes zoom { 50% { -webkit-transform: scale(1.2); transform:scale(1.2); } 100% { -webkit-transform: rotate(360deg) scale(1); transform:rotate(360deg) scale(1); }  }
